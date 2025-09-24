@@ -10,6 +10,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LocalReminders.Application\LocalReminders.App.csproj" />
+    <ProjectReference Include="..\LocalReminders.Infrastructure\LocalReminders.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
   </ItemGroup>
 
 </Project>

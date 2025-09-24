@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
-            AddReminder = new Button();
             CategoryTreeView = new TreeView();
+            RightPanelTableLayout = new TableLayoutPanel();
+            AddReminder = new Button();
             ReminderGroupBox = new GroupBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
+            RemindersFlowPanel = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
+            RightPanelTableLayout.SuspendLayout();
+            ReminderGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -52,55 +54,65 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(tableLayoutPanel1);
+            splitContainer1.Panel2.Controls.Add(RightPanelTableLayout);
             splitContainer1.Size = new Size(550, 522);
-            splitContainer1.SplitterDistance = 195;
+            splitContainer1.SplitterDistance = 189;
             splitContainer1.TabIndex = 0;
-            // 
-            // AddReminder
-            // 
-            AddReminder.Dock = DockStyle.Fill;
-            AddReminder.Location = new Point(3, 3);
-            AddReminder.Name = "AddReminder";
-            AddReminder.Size = new Size(345, 34);
-            AddReminder.TabIndex = 1;
-            AddReminder.Text = "Add Reminder";
-            AddReminder.UseVisualStyleBackColor = true;
-            AddReminder.Click += AddReminder_Click;
             // 
             // CategoryTreeView
             // 
             CategoryTreeView.Dock = DockStyle.Fill;
             CategoryTreeView.Location = new Point(0, 0);
             CategoryTreeView.Name = "CategoryTreeView";
-            CategoryTreeView.Size = new Size(195, 522);
+            CategoryTreeView.Size = new Size(189, 522);
             CategoryTreeView.TabIndex = 0;
+            // 
+            // RightPanelTableLayout
+            // 
+            RightPanelTableLayout.ColumnCount = 1;
+            RightPanelTableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            RightPanelTableLayout.Controls.Add(AddReminder, 0, 0);
+            RightPanelTableLayout.Controls.Add(ReminderGroupBox, 0, 1);
+            RightPanelTableLayout.Dock = DockStyle.Fill;
+            RightPanelTableLayout.Location = new Point(0, 0);
+            RightPanelTableLayout.Name = "RightPanelTableLayout";
+            RightPanelTableLayout.RowCount = 2;
+            RightPanelTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 7.662835F));
+            RightPanelTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 92.3371658F));
+            RightPanelTableLayout.Size = new Size(357, 522);
+            RightPanelTableLayout.TabIndex = 0;
+            // 
+            // AddReminder
+            // 
+            AddReminder.Dock = DockStyle.Fill;
+            AddReminder.Location = new Point(3, 3);
+            AddReminder.Name = "AddReminder";
+            AddReminder.Size = new Size(351, 34);
+            AddReminder.TabIndex = 1;
+            AddReminder.Text = "Add Reminder";
+            AddReminder.UseVisualStyleBackColor = true;
+            AddReminder.Click += AddReminder_Click;
             // 
             // ReminderGroupBox
             // 
+            ReminderGroupBox.Controls.Add(RemindersFlowPanel);
             ReminderGroupBox.Dock = DockStyle.Fill;
             ReminderGroupBox.Location = new Point(3, 43);
             ReminderGroupBox.Name = "ReminderGroupBox";
-            ReminderGroupBox.Size = new Size(345, 476);
+            ReminderGroupBox.Size = new Size(351, 476);
             ReminderGroupBox.TabIndex = 0;
             ReminderGroupBox.TabStop = false;
             ReminderGroupBox.Text = "Reminders";
-            ReminderGroupBox.Enter += Reminder_Enter;
             // 
-            // tableLayoutPanel1
+            // RemindersFlowPanel
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(AddReminder, 0, 0);
-            tableLayoutPanel1.Controls.Add(ReminderGroupBox, 0, 1);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 7.662835F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 92.3371658F));
-            tableLayoutPanel1.Size = new Size(351, 522);
-            tableLayoutPanel1.TabIndex = 0;
+            RemindersFlowPanel.AutoScroll = true;
+            RemindersFlowPanel.Dock = DockStyle.Fill;
+            RemindersFlowPanel.FlowDirection = FlowDirection.TopDown;
+            RemindersFlowPanel.Location = new Point(3, 19);
+            RemindersFlowPanel.Name = "RemindersFlowPanel";
+            RemindersFlowPanel.Size = new Size(345, 454);
+            RemindersFlowPanel.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -116,7 +128,8 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
+            RightPanelTableLayout.ResumeLayout(false);
+            ReminderGroupBox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -126,6 +139,7 @@
         private TreeView CategoryTreeView;
         private GroupBox ReminderGroupBox;
         private Button AddReminder;
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel RightPanelTableLayout;
+        private FlowLayoutPanel RemindersFlowPanel;
     }
 }

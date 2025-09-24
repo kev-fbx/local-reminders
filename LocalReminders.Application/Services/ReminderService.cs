@@ -1,27 +1,37 @@
 ﻿using LocalReminders.App.Interfaces;
+using LocalReminders.App.DTO;
 using LocalReminders.Domain.Entities;
 
 namespace LocalReminders.App.Services
 {
     public class ReminderService : IReminderService
     {
-        private readonly List<Reminder> _reminders = new List<Reminder>();
-        public void AddReminder(Reminder reminder)
+        private readonly IReminderRepository _repository;
+
+        public ReminderService(IReminderRepository repository)
         {
-            _reminders.Add(reminder);
+            _repository = repository;
         }
 
-        public IReadOnlyList<Reminder> GetAllReminders()
+        public async Task AddReminderAsync(string label, string? description = null, DateTime? dueDate = null, string? category = null)
         {
-            return _reminders.AsReadOnly();
+            Reminder reminder = new(label, description, dueDate, category);
+            await _repository.AddAsync(reminder);
         }
 
-        public IEnumerable<string> GetCategories()
+        public async Task<List<ReminderDTO>> GetAllRemindersAsync()
         {
-            return _reminders
-                .Where(r => !string.IsNullOrWhiteSpace(r.Category))
-                .Select(r => r.Category!)
-                .Distinct();
+            List<Reminder> reminders = await _repository.GetPendingRemindersAsync();
+
+            return reminders.Select(r => new ReminderDTO
+            {
+                Id = r.Id,
+                Label = r.Label,
+                Description = r.Description,
+                DueDate = r.DueDate,
+                Category = r.Category,
+                Completed = r.Completed
+            }).ToList();
         }
     }
 }
