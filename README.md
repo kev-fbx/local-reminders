@@ -7,3 +7,4 @@
 - [ ] Allow user to edit reminder
 - [ ] Allow user to categorise reminders
 - [ ] **Allow user to sync reminders across devices**
+- [ ] iOS build
