@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LocalReminders.Application\LocalReminders.App.csproj" />
-    <ProjectReference Include="..\LocalReminders.Infrastructure\LocalReminders.Infrastructure.csproj" />
+    <ProjectReference Include="..\LocalReminders.Infrastructure\LocalReminders.DataAccess.csproj" />
   </ItemGroup>
 
   <ItemGroup>

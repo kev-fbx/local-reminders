@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalReminders.App", "Local
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalReminders.Domain", "LocalReminders.Domain\LocalReminders.Domain.csproj", "{FA36ACFB-B34E-425D-9D88-79B18F6AE797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalReminders.Infrastructure", "LocalReminders.Infrastructure\LocalReminders.Infrastructure.csproj", "{F0DDBD43-8032-4E04-8960-840B78F0ED9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalReminders.DataAccess", "LocalReminders.Infrastructure\LocalReminders.DataAccess.csproj", "{F0DDBD43-8032-4E04-8960-840B78F0ED9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
